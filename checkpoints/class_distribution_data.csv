@@ -1,0 +1,5 @@
+label,resampling,total,non_fraud,fraud,non_fraud_pct,fraud_pct,imbalance_ratio
+Training Set (After Resampling),none,80000,79887,113,99.85875,0.14125,706.9646017699115
+Training Set (After Resampling),smote,159774,79887,79887,50.0,50.0,1.0
+Training Set (After Resampling),undersample,226,113,113,50.0,50.0,1.0
+Training Set (After Resampling),smotetomek,159774,79887,79887,50.0,50.0,1.0
