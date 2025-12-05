@@ -42,11 +42,11 @@ This project trains and evaluates **16 different SVM model configurations** to d
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> ⚠️ **Important:** You **MUST** run `main.py` before running `visualize.py`
+> **Important:** You **MUST** run `main.py` before running `visualize.py`
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 
