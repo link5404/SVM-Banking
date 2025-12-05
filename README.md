@@ -2,24 +2,6 @@
 
 A comprehensive SVM-based fraud detection system with multiple resampling strategies and kernel types for handling imbalanced financial transaction data.
 
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Pipeline Flow](#pipeline-flow)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Detailed Usage](#detailed-usage)
-- [Project Structure](#project-structure)
-- [Features](#features)
-- [Configuration](#configuration)
-- [Output Examples](#output-examples)
-- [Performance Metrics](#performance-metrics)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Overview
 
 This project trains and evaluates **16 different SVM model configurations** to detect fraudulent financial transactions using the PaySim synthetic dataset. It systematically explores the impact of:
