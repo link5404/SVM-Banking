@@ -79,7 +79,7 @@ joblib>=1.0.0
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Run the Complete Pipeline
 
@@ -91,25 +91,13 @@ python main.py
 python visualize.py
 ```
 
-### Expected First-Run Timeline
-
-1. **main.py** (~15-30 minutes)
-   - Dataset download: ~2-5 minutes (470MB)
-   - Feature engineering: ~1-2 minutes
-   - Model training: ~10-20 minutes (varies by hardware)
-   - Visualization generation: ~10 seconds
-
-2. **visualize.py** (~5 seconds)
-   - Loads cached data
-   - Generates pie charts
-
 ### Subsequent Runs
 
 Thanks to the checkpoint system, subsequent runs of `main.py` will be **much faster** (~30 seconds) as it skips already-completed steps.
 
 ---
 
-## 📖 Detailed Usage
+## Detailed Usage
 
 ### Step 1: Training Pipeline (`main.py`)
 
@@ -196,7 +184,7 @@ plots/
 4. Displays detailed statistics in console
 
 **Prerequisites:**
-- ⚠️ `main.py` must be run first
+- `main.py` must be run first
 - Requires checkpoint files to exist
 
 **Run Command:**
@@ -213,89 +201,7 @@ plots/
 
 ---
 
-## 📁 Project Structure
-
-```
-fraud-detection-svm/
-│
-├── main.py                              # Training pipeline (run first)
-├── visualize.py                         # Visualization script (run second)
-├── README.md                            # This file
-├── requirements.txt                     # Python dependencies
-│
-├── checkpoints/                         # Auto-generated cache (can be deleted to retrain)
-│   ├── processed_data_*.pkl             # Preprocessed datasets (4 files)
-│   ├── trained_model_*.pkl              # Trained SVM models (16 files)
-│   └── predictions_*.pkl                # Model predictions (16 files)
-│
-├── trained_models/                      # Production-ready models
-│   ├── none_linear/
-│   │   ├── model.pkl                    # Serialized SVM model
-│   │   ├── scaler.pkl                   # StandardScaler for preprocessing
-│   │   ├── feature_columns.pkl          # Feature names list
-│   │   └── metadata.json                # Model metrics and info
-│   └── ... (15 more model directories)
-│
-└── plots/                               # Generated visualizations
-    ├── class_imbalance_comparison.png   # 4-panel class distribution analysis
-    ├── training_results.png             # 6-panel performance comparison
-    └── class_distribution_pie_charts.png # 4-panel pie charts
-```
-
----
-
-## ✨ Features
-
-### Intelligent Checkpoint System
-
-- **Incremental Training:** Automatically resumes from the last completed step
-- **Fast Iteration:** Skips preprocessing and training for already-completed models
-- **Resumable:** Can stop and restart without losing progress
-- **Storage Efficient:** Reuses cached data across experiments
-
-**To retrain from scratch:**
-```bash
-rm -rf checkpoints/
-python main.py
-```
-
-### Comprehensive Feature Engineering
-
-**30+ engineered features** designed to capture fraud patterns:
-
-| Category | Features | Examples |
-|----------|----------|----------|
-| Transaction Type | 4 features | Encoded type, transfer flag, cashout flag |
-| Temporal | 4 features | Hour of day, night transaction indicator |
-| Merchant | 2 features | Origin/destination merchant flags |
-| Balance Analysis | 5 features | Balance changes, amount-to-balance ratios |
-| Fraud Indicators | 5 features | Account draining, balance mismatches |
-| Interactions | 2 features | Combined high-risk indicators |
-
-### Automated Model Comparison
-
-Generates comprehensive visualizations:
-
-1. **class_imbalance_comparison.png**
-   - Absolute sample counts
-   - Percentage distributions
-   - Imbalance ratios (linear & log scale)
-
-2. **training_results.png**
-   - F1-Score heatmap by strategy & kernel
-   - ROC-AUC heatmap
-   - Precision-Recall scatter plot
-   - Training time comparison
-   - Top 10 configurations ranking
-   - Best model metrics breakdown
-
-3. **class_distribution_pie_charts.png**
-   - Side-by-side comparison of all resampling strategies
-   - Percentage and absolute count labels
-
----
-
-## ⚙️ Configuration
+## Configuration
 
 ### Modifying Sample Size
 
@@ -396,8 +302,6 @@ Imbalance Ratio:     1.00:1 (non-fraud:fraud)
 
 ...
 
-✓ Class imbalance comparison plot saved to: plots/class_imbalance_comparison.png
-✓ Training results plot saved to: plots/training_results.png
 ```
 
 ### Console Output: `visualize.py`
